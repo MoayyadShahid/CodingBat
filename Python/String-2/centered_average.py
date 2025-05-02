@@ -1,5 +1,11 @@
 def centered_average(nums):
-  nums.sort()
-  max = nums[-1]
+  max = nums[0]
   min = nums[0]
-  return (sum(nums) - max - min) / (len(nums) - 2)
+  sum = 0
+  for i in nums:
+    sum += i
+    if max < i:
+      max = i
+    elif min > i:
+      min = i
+  return (sum - max - min) / (len(nums) - 2)
